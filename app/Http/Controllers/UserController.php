@@ -151,6 +151,7 @@ class UserController extends Controller
             $set['pswd'] = $password;
         }
         $set['deskripsi'] = $request->input('user_deskripsi');
+        $set['email'] = $request->input('email');
         $update = DB::table('users')->where('login', '=', $login)
             ->where('email', '=', $email)
             ->update($set);
